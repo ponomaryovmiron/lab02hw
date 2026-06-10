@@ -3,11 +3,11 @@
 
 int main()
 {
-    // Read user name from standard input.
+    // Input user name.
     std::string name;
     std::cin >> name;
 
-    // Print greeting message.
+    // Output message to console.
     std::cout << "Hello world from @" << name << std::endl;
 
     return 0;
