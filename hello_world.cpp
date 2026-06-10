@@ -1,14 +1,15 @@
 #include <iostream>
 #include <string>
 
-int main()
+int
+main()
 {
-    // Input user name.
-    std::string name;
-    std::cin >> name;
+  // Input user name.
+  std::string name;
+  std::cin >> name;
 
-    // Output message to console.
-    std::cout << "Hello world from @" << name << std::endl;
+  // Output message to console.
+  std::cout << "Hello world from @" << name << std::endl;
 
-    return 0;
+  return 0;
 }
