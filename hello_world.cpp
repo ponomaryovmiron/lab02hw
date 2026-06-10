@@ -1,13 +1,14 @@
 #include <iostream>
 #include <string>
-using namespace std;
 
 int main()
 {
-    string name;
-    cin >> name;
+    // Read user name from standard input.
+    std::string name;
+    std::cin >> name;
 
-    cout << "Hello world from @" << name << endl;
+    // Print greeting message.
+    std::cout << "Hello world from @" << name << std::endl;
 
     return 0;
 }
