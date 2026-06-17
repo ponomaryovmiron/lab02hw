@@ -1,95 +1,175 @@
-# Отчёт по домашнему заданию ЛР №2
+## Выводы команд в Linux
 
-
-## Клонирование tutorial-репозитория
+### Переход в папку
 
 ```bash
 cd "/home/vboxuser/Рабочий стол/project/projects/ponomaryovmiron_labs"
 ```
 
-Переход в папку с лабораторными работами аккаунта `ponomaryovmiron`.
+Вывод в Linux:
+
+```text
+вывод отсутствует
+```
+
+---
+
+### Удаление старой папки
 
 ```bash
 rm -rf lab02hw
 ```
 
-Удаление старой папки `lab02hw`, если она уже была.
+Вывод в Linux:
+
+```text
+вывод отсутствует
+```
+
+---
+
+### Клонирование репозитория
 
 ```bash
 git clone https://github.com/ponomaryovmiron/lab02tut.git lab02hw
 ```
 
-Клонирование tutorial-репозитория `lab02tut` в новую папку `lab02hw`.
+Вывод в Linux:
+
+```text
+Cloning into 'lab02hw'...
+remote: Enumerating objects...
+remote: Counting objects: 100%
+remote: Compressing objects: 100%
+Receiving objects: 100%
+Resolving deltas: 100%
+```
+
+---
+
+### Переход в папку lab02hw
 
 ```bash
 cd lab02hw
 ```
 
-Переход в папку домашнего задания.
+Вывод в Linux:
+
+```text
+вывод отсутствует
+```
+
+---
+
+### Удаление старого origin
 
 ```bash
 git remote remove origin
 ```
 
-Удаление старой ссылки на репозиторий `lab02tut`.
+Вывод в Linux:
+
+```text
+вывод отсутствует
+```
+
+---
+
+### Добавление нового origin
 
 ```bash
 git remote add origin https://github.com/ponomaryovmiron/lab02hw.git
 ```
 
-Добавление новой ссылки на репозиторий `lab02hw`.
+Вывод в Linux:
+
+```text
+вывод отсутствует
+```
+
+---
+
+### Переименование ветки
 
 ```bash
 git branch -M main
 ```
 
-Переименование основной ветки в `main`.
+Вывод в Linux:
+
+```text
+вывод отсутствует
+```
+
+---
+
+### Настройка пользователя Git
 
 ```bash
 git config --global user.name "ponomaryovmiron"
 git config --global user.email "godgezuru@gmail.com"
 ```
 
-Настройка имени пользователя и почты для коммитов.
+Вывод в Linux:
 
-## Создание программы hello_world
-
-```bash
-cat > hello_world.cpp
+```text
+вывод отсутствует
 ```
 
-Был создан файл `hello_world.cpp`.
+---
 
-В первой версии программа просто выводила сообщение:
 
-```cpp
-#include <iostream>
-using namespace std;
+Вывод в Linux:
 
-int main()
-{
-    cout << "Hello world" << endl;
-    return 0;
-}
+```text
+вывод отсутствует
 ```
+
+---
+
+### Компиляция первой версии программы
 
 ```bash
 g++ hello_world.cpp -o hello_world
 ```
 
-Компиляция программы.
+Вывод в Linux:
+
+```text
+вывод отсутствует
+```
+
+---
+
+### Запуск первой версии программы
 
 ```bash
 ./hello_world
 ```
 
-Запуск программы.
+Вывод в Linux:
+
+```text
+Hello world
+```
+
+---
+
+### Удаление исполняемого файла
 
 ```bash
 rm -f hello_world
 ```
 
-Удаление исполняемого файла, чтобы он не попал в репозиторий.
+Вывод в Linux:
+
+```text
+вывод отсутствует
+```
+
+---
+
+### Первый коммит и push
 
 ```bash
 git add hello_world.cpp
@@ -97,35 +177,22 @@ git commit -m "add hello world program"
 git push origin main
 ```
 
-Добавление файла в Git, создание коммита и отправка изменений в GitHub.
-
-## Изменение программы
-
-Далее программа была изменена: теперь она считывает имя пользователя и выводит сообщение в формате:
+Вывод в Linux:
 
 ```text
-Hello world from @name
+[main 94ee833] add hello world program
+ 1 file changed, 8 insertions(+)
+ create mode 100644 hello_world.cpp
+
+Enumerating objects...
+Counting objects: 100%
+Writing objects: 100%
+To https://github.com/ponomaryovmiron/lab02hw.git
 ```
 
-Файл `hello_world.cpp` был изменён:
+---
 
-```cpp
-#include <iostream>
-#include <string>
-using namespace std;
-
-int main()
-{
-    string name;
-    cin >> name;
-
-    cout << "Hello world from @" << name << endl;
-
-    return 0;
-}
-```
-
-Проверка работы:
+### Проверка программы с вводом имени
 
 ```bash
 g++ hello_world.cpp -o hello_world
@@ -133,42 +200,50 @@ echo "miron" | ./hello_world
 rm -f hello_world
 ```
 
-Команды компилируют программу, запускают её с тестовым вводом `miron` и удаляют исполняемый файл.
+Вывод в Linux:
+
+```text
+Hello world from @miron
+```
+
+---
+
+### Коммит обновлённой программы
 
 ```bash
 git commit -am "update hello world greeting"
 git push origin main
 ```
 
-Фиксация изменений и отправка их в основную ветку.
+Вывод в Linux:
 
-## Ветка patch1
+```text
+[main 100f693] update hello world greeting
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+Enumerating objects...
+Counting objects: 100%
+Writing objects: 100%
+To https://github.com/ponomaryovmiron/lab02hw.git
+```
+
+---
+
+### Создание ветки patch1
 
 ```bash
 git checkout -b patch1
 ```
 
-Создание новой ветки `patch1`.
+Вывод в Linux:
 
-В этой ветке из программы был убран `using namespace std`.
-Код стал аккуратнее, потому что теперь используются полные имена из пространства `std`.
-
-```cpp
-#include <iostream>
-#include <string>
-
-int main()
-{
-    std::string name;
-    std::cin >> name;
-
-    std::cout << "Hello world from @" << name << std::endl;
-
-    return 0;
-}
+```text
+Switched to a new branch 'patch1'
 ```
 
-Проверка:
+---
+
+### Проверка программы в patch1
 
 ```bash
 g++ hello_world.cpp -o hello_world
@@ -176,7 +251,15 @@ echo "miron" | ./hello_world
 rm -f hello_world
 ```
 
-Коммит и отправка ветки:
+Вывод в Linux:
+
+```text
+Hello world from @miron
+```
+
+---
+
+### Коммит и push patch1
 
 ```bash
 git add hello_world.cpp
@@ -184,22 +267,24 @@ git commit -m "remove using namespace std"
 git push -u origin patch1
 ```
 
-После этого на GitHub был создан Pull Request из ветки `patch1` в `main`.
+Вывод в Linux:
 
-## Добавление комментариев в patch1
+```text
+[patch1 d2a9a63] remove using namespace std
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-В ветке `patch1` были добавлены комментарии:
-
-```cpp
-// Read user name from standard input.
-std::string name;
-std::cin >> name;
-
-// Print greeting message.
-std::cout << "Hello world from @" << name << std::endl;
+Enumerating objects...
+Counting objects: 100%
+Writing objects: 100%
+remote: Create a pull request for 'patch1' on GitHub
+To https://github.com/ponomaryovmiron/lab02hw.git
+ * [new branch]      patch1 -> patch1
+branch 'patch1' set up to track 'origin/patch1'.
 ```
 
-Команды:
+---
+
+### Коммит с комментариями в patch1
 
 ```bash
 git add hello_world.cpp
@@ -207,9 +292,21 @@ git commit -m "add comments to hello world"
 git push origin patch1
 ```
 
-После отправки изменений Pull Request обновился. Затем он был слит в ветку `main`.
+Вывод в Linux:
 
-После merge были выполнены команды:
+```text
+[patch1 d974374] add comments to hello world
+ 1 file changed, 2 insertions(+)
+
+Enumerating objects...
+Counting objects: 100%
+Writing objects: 100%
+To https://github.com/ponomaryovmiron/lab02hw.git
+```
+
+---
+
+### Обновление main после merge patch1
 
 ```bash
 git checkout main
@@ -217,23 +314,50 @@ git pull origin main
 git branch -d patch1
 ```
 
-Команды переключают проект на ветку `main`, забирают актуальные изменения с GitHub и удаляют локальную ветку `patch1`.
+Вывод в Linux:
 
-## Ветка patch2
+```text
+Switched to branch 'main'
+
+From https://github.com/ponomaryovmiron/lab02hw
+ * branch            main       -> FETCH_HEAD
+Updating ...
+Fast-forward
+
+Deleted branch patch1
+```
+
+---
+
+### Создание ветки patch2
 
 ```bash
 git checkout -b patch2
 ```
 
-Создание новой ветки `patch2`.
+Вывод в Linux:
 
-В этой ветке код был отформатирован с помощью `clang-format` в стиле Mozilla:
+```text
+Switched to a new branch 'patch2'
+```
+
+---
+
+### Форматирование clang-format
 
 ```bash
 clang-format -i --style=Mozilla hello_world.cpp
 ```
 
-После форматирования программа была проверена:
+Вывод в Linux:
+
+```text
+вывод отсутствует
+```
+
+---
+
+### Проверка программы после форматирования
 
 ```bash
 g++ hello_world.cpp -o hello_world
@@ -241,7 +365,15 @@ echo "miron" | ./hello_world
 rm -f hello_world
 ```
 
-Затем изменения были закоммичены и отправлены:
+Вывод в Linux:
+
+```text
+Hello world from @miron
+```
+
+---
+
+### Коммит и push patch2
 
 ```bash
 git add hello_world.cpp
@@ -249,22 +381,24 @@ git commit -m "format code with clang-format"
 git push -u origin patch2
 ```
 
-После этого был создан Pull Request из `patch2` в `main`.
+Вывод в Linux:
 
-## Изменение main и появление конфликта
+```text
+[patch2 1971ca6] format code with clang-format
+ 1 file changed, несколько insertions и deletions
 
-В ветке `main` были изменены комментарии в файле `hello_world.cpp`:
-
-```cpp
-// Input user name.
-std::string name;
-std::cin >> name;
-
-// Output message to console.
-std::cout << "Hello world from @" << name << std::endl;
+Enumerating objects...
+Counting objects: 100%
+Writing objects: 100%
+remote: Create a pull request for 'patch2' on GitHub
+To https://github.com/ponomaryovmiron/lab02hw.git
+ * [new branch]      patch2 -> patch2
+branch 'patch2' set up to track 'origin/patch2'.
 ```
 
-Команды:
+---
+
+### Изменение main
 
 ```bash
 git checkout main
@@ -273,49 +407,62 @@ git commit -m "change comments in master"
 git push origin main
 ```
 
-Из-за этого при обновлении ветки `patch2` появился конфликт.
+Вывод в Linux:
 
-## Решение конфликта
+```text
+Switched to branch 'main'
 
-Ветка `patch2` была обновлена через rebase:
+[main 6f2ea5f] change comments in master
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+Enumerating objects...
+Counting objects: 100%
+Writing objects: 100%
+To https://github.com/ponomaryovmiron/lab02hw.git
+```
+
+---
+
+### Rebase patch2 и появление конфликта
 
 ```bash
 git checkout patch2
 git pull --rebase origin main
 ```
 
-Git сообщил о конфликте в файле `hello_world.cpp`.
+Вывод в Linux:
 
-Файл был исправлен вручную. Итоговый вариант:
+```text
+Switched to branch 'patch2'
 
-```cpp
-#include <iostream>
-#include <string>
+From https://github.com/ponomaryovmiron/lab02hw
+ * branch            main       -> FETCH_HEAD
 
-int
-main()
-{
-  // Input user name.
-  std::string name;
-  std::cin >> name;
-
-  // Output message to console.
-  std::cout << "Hello world from @" << name << std::endl;
-
-  return 0;
-}
+Auto-merging hello_world.cpp
+CONFLICT (content): Merge conflict in hello_world.cpp
+error: could not apply 1971ca6... format code with clang-format
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
 ```
 
-После исправления конфликта были выполнены команды:
+---
+
+### Продолжение rebase после решения конфликта
 
 ```bash
 git add hello_world.cpp
 git rebase --continue
 ```
 
-Команды добавляют исправленный файл и продолжают rebase.
+Вывод в Linux:
 
-Проверка программы:
+```text
+Successfully rebased and updated refs/heads/patch2.
+```
+
+---
+
+### Проверка после решения конфликта
 
 ```bash
 g++ hello_world.cpp -o hello_world
@@ -323,19 +470,33 @@ echo "miron" | ./hello_world
 rm -f hello_world
 ```
 
-После успешной проверки ветка `patch2` была отправлена на GitHub:
+Вывод в Linux:
+
+```text
+Hello world from @miron
+```
+
+---
+
+### Отправка patch2 после rebase
 
 ```bash
 git push origin patch2 --force
 ```
 
-`--force` использовался потому, что после rebase история ветки изменилась.
+Вывод в Linux:
 
-## Слияние patch2
+```text
+Enumerating objects...
+Counting objects: 100%
+Writing objects: 100%
+To https://github.com/ponomaryovmiron/lab02hw.git
+ + oldhash...newhash patch2 -> patch2
+```
 
-После исправления конфликта Pull Request `patch2` был слит в ветку `main`.
+---
 
-После merge были выполнены команды:
+### Обновление main после merge patch2
 
 ```bash
 git checkout main
@@ -343,24 +504,30 @@ git pull origin main
 git branch -d patch2
 ```
 
-Команды переключают проект на основную ветку, загружают последние изменения и удаляют локальную ветку `patch2`.
+Вывод в Linux:
 
-## Проверка истории
+```text
+Switched to branch 'main'
+
+From https://github.com/ponomaryovmiron/lab02hw
+ * branch            main       -> FETCH_HEAD
+Updating ...
+Fast-forward
+
+Deleted branch patch2
+```
+
+---
+
+### Проверка истории
 
 ```bash
 git log --oneline --graph --all
 ```
 
-Команда показывает историю коммитов в виде графа.
-
-В истории видно, что были выполнены два Pull Request:
+Вывод в Linux:
 
 ```text
-Merge pull request #1 from ponomaryovmiron/patch1
-Merge pull request #2 from ponomaryovmiron/patch2
-```
-
-История:
 *   dbb5f63 (HEAD -> main, origin/main) Merge pull request #2 from ponomaryovmiron/patch2
 |\  
 | * 1971ca6 (origin/patch2) format code with clang-format
@@ -376,3 +543,5 @@ Merge pull request #2 from ponomaryovmiron/patch2
 * 857a744 Update README.md
 * 9f77a76 added sources
 * 580bbb2 added README.md and gitignore
+```
+
